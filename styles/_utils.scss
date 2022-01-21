@@ -1,0 +1,19 @@
+@import 'breakpoint';
+
+@mixin mobile {
+  @include breakpoint(0 576px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @include breakpoint(576px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @include breakpoint(1200px) {
+    @content;
+  }
+}
