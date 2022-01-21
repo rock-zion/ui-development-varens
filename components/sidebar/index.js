@@ -13,8 +13,10 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { GetPro } from 'components/getpro/getpro';
 
-// LinkItem
-const LinkItem = React.forwardRef(
+
+// eslint-disable-next-line
+export const LinkItem = React.forwardRef(
+
   ({ getActiveColor, linkIsActive, text, onClick, IMG, href }, ref) => {
     //
     const link_wrapper = classNames('d-flex', 'px-3', style.link_wrapper, {
