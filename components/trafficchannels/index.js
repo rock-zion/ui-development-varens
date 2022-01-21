@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import style from './style.module.scss';
-import classNames from 'classNames';
+import classNames from 'classnames';
 import { DoughnutChart } from 'components/charts/doughnut';
 
 export const TrafficChannels = () => {
