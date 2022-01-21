@@ -1,0 +1,35 @@
+.wrapper {
+  min-height: 341px;
+}
+
+.revenue_title,
+.order_title {
+  display: flex;
+  align-items: center;
+}
+
+.revenue_title::before,
+.order_title::before {
+  display: block;
+  content: '';
+  height: 7px;
+  width: 7px;
+  border-radius: 100%;
+  margin-right: 8px;
+}
+
+.revenue_title::before {
+  background: var(--primary);
+}
+
+.order_title::before {
+  background: var(--green);
+}
+
+.order_title {
+  margin-left: 24px;
+}
+
+.chart_container {
+  height: 251px;
+}
