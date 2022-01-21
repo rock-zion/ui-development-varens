@@ -37,6 +37,11 @@ const LinkItem = React.forwardRef(
     );
   }
 );
+  const linkIsActive = link => {
+    const isActive = pathname?.includes(link.slice(1)) ? true : false;
+    return isActive;
+  };
+
   const getActiveColor = link => {
     const isActive = pathname?.includes(link.slice(1)) ? '#5542F6' : '#84818A';
     return isActive;
