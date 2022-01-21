@@ -25,6 +25,41 @@ import USAMap from 'react-usa-map';
     alert(event.target.dataset.name);
   };
       <USAMap customize={statesCustomConfig()} onClick={mapHandler} />
+      <div className={style.ct_table_wrapper}>
+        <table className='table table-hove table-borderless'>
+          <thead>
+            <tr>
+              <th
+                className='border-bottom display-1 fw-bold text-secondary p-0 pb-2'
+                scope='col-1'>
+                STATE
+              </th>
+              <th
+                className='border-bottom display-1 fw-bold text-secondary p-0 pb-2'
+                scope='col-1'>
+                ORDERS
+              </th>
+              <th
+                className='p-0 pb-2 border-bottom display-1 fw-bold text-secondary d-flex justify-content-end'
+                scope='col-1'>
+                SALES
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {table_content.map(item => (
+              <tr key={item.orders}>
+                <td className='display-2 fw-bold text-dark'>{item.country}</td>
+                <td className='display-2 fw-normal text-dark'>
+                  {formatNum(item.orders)}
+                </td>
+                <td className='display-2 fw-normal text-dark d-flex justify-content-end'>
+                  ${formatNum(item.sales)}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
 CountryTrafficChannels.defaultProps = {
   table_header: ['STATES', 'ORDERS', 'SALES'],
   table_content: [
