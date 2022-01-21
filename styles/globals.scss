@@ -1,0 +1,17 @@
+:root {
+  --primary: #5542f6;
+  --primary_light: #eae8fb;
+  --green: #20c9ac;
+  --light_blue: #00a5ff;
+  --dark: #2e2c34;
+  --secondary: #84818a;
+}
+
+$theme-colors: (
+  'primary': #5542f6,
+  'primary_light': #eae8fb,
+  'secondary': #84818a,
+  'dark': #2e2c34,
+  'green': #20c9ac,
+  'light_blue': #00a5ff,
+);
