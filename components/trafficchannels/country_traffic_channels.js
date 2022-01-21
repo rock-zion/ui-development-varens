@@ -1,4 +1,18 @@
+import React from 'react';
+import classNames from 'classnames';
+import style from './style.module.scss';
 import USAMap from 'react-usa-map';
+import { numberWithCommas as formatNum } from 'utils';
+
+export const CountryTrafficChannels = ({ table_header, table_content }) => {
+  const wrapper = classNames(
+    style.ct_wrapper,
+    'wrapper',
+    'bg-white',
+    'd-flex',
+    'flex-column'
+  );
+
   const statesCustomConfig = () => {
     return {
       CA: {
@@ -24,6 +38,12 @@ import USAMap from 'react-usa-map';
   const mapHandler = event => {
     alert(event.target.dataset.name);
   };
+
+  return (
+    <div className={wrapper}>
+      <div className='mb-3'>
+        <span className='title'>Traffic Channels</span>
+      </div>
       <USAMap customize={statesCustomConfig()} onClick={mapHandler} />
       <div className={style.ct_table_wrapper}>
         <table className='table table-hove table-borderless'>
@@ -60,6 +80,11 @@ import USAMap from 'react-usa-map';
             ))}
           </tbody>
         </table>
+      </div>
+    </div>
+  );
+};
+
 CountryTrafficChannels.defaultProps = {
   table_header: ['STATES', 'ORDERS', 'SALES'],
   table_content: [
