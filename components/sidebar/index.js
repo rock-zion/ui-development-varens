@@ -6,6 +6,7 @@ import { default as ManageReviews } from 'assets/sidebar/ManageReviews.svg';
 import { default as Checkout } from 'assets/sidebar/Checkout.svg';
 import { default as Setting } from 'assets/sidebar/Settings.svg';
 import { default as Brand } from 'assets/sidebar/Logo.svg';
+import { useRouter } from 'next/router';
 const LinkItem = React.forwardRef(
   ({ getActiveColor, linkIsActive, text, onClick, IMG, href }, ref) => {
     //
@@ -37,6 +38,8 @@ const LinkItem = React.forwardRef(
     );
   }
 );
+  let { pathname } = useRouter();
+  pathname = pathname.slice(1);
   const linkIsActive = link => {
     const isActive = pathname?.includes(link.slice(1)) ? true : false;
     return isActive;
