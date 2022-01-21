@@ -94,12 +94,12 @@ export const Sidebar = ({ sidebar_links }) => {
 Sidebar.defaultProps = {
   sidebar_links: [
     { title: 'Overview', url: '/', IMG: Overview },
-    { title: 'Product', url: '/products', IMG: Products },
-    { title: 'Orders', url: '/orders', IMG: Orders },
-    { title: 'Customers', url: '/customers', IMG: Customers },
-    { title: 'Manage Reviews', url: '/managereviews', IMG: ManageReviews },
-    { title: 'Checkout', url: '/checkout', IMG: Checkout },
-    { title: 'Settings', url: '/settings', IMG: Setting },
+    { title: 'Product', url: '/#', IMG: Products },
+    { title: 'Orders', url: '/#', IMG: Orders },
+    { title: 'Customers', url: '/#', IMG: Customers },
+    { title: 'Manage Reviews', url: '/#', IMG: ManageReviews },
+    { title: 'Checkout', url: '/#', IMG: Checkout },
+    { title: 'Settings', url: '/#', IMG: Setting },
   ],
 };
 
