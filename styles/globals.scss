@@ -1,3 +1,11 @@
+@import './_utils.scss';
+
+body {
+  font-family: 'Jost', sans-serif !important;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   --primary: #5542f6;
   --primary_light: #eae8fb;
@@ -15,6 +23,7 @@ $theme-colors: (
   'green': #20c9ac,
   'light_blue': #00a5ff,
 );
+
 $display-font-sizes: (
   1: 0.75rem,
   2: 0.875rem,
@@ -27,3 +36,64 @@ $font-weight-light: 300;
 $font-weight-normal: 400;
 $font-weight-bold: 600;
 $font-weight-bolder: 700;
+
+@import '~bootstrap/scss/bootstrap';
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+button {
+  font-size: 14px;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+.badge {
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  margin-left: 250px;
+  padding: 0 32px 0 32px;
+  background: #fbfafc;
+}
+
+.title {
+  font-weight: 600;
+}
+
+.wrapper {
+  padding: 22px 24px;
+  border-radius: 4px;
+}
+
+.notification_alert {
+  background-color: #fc3400;
+  top: 0;
+  right: 0;
+  height: 8px;
+  width: 8px;
+  border-radius: 100%;
+}
+
+.mb-2px {
+  margin-bottom: 2px;
+}
+
+.us-state-map {
+  width: 100%;
+  height: fit-content;
+}
+
+.img-bg {
+  width: fit-content;
+  height: fit-content;
+  padding: 2px;
+  background: #EBEAED;
+  border-radius: 100%;
+}
