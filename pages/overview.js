@@ -1,3 +1,5 @@
+      <Searchbar />
+      <Header />
 Home.defaultProps = {
   new_customers_data: {
     link: {
