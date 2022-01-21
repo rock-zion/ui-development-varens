@@ -1,3 +1,34 @@
+import React from 'react';
+import classNames from 'classnames';
+import style from './style.module.scss';
+import { numberWithCommas as formatNum } from 'utils';
+import { default as SmGain } from 'assets/SmGain.svg';
+import { default as SmLoss } from 'assets/SmLoss.svg';
+
+export const TopProducts = ({ table_content }) => {
+  const wrapper = classNames(
+    style.tp_wrapper,
+    'bg-white',
+    'wrapper',
+    'd-flex',
+    'flex-column'
+  );
+  const tr_td = classNames(
+    'display-2',
+    'fw-bold',
+    'text-secondary',
+    'px-0',
+    'align-middle'
+  );
+
+  const tr_th = classNames(
+    'border-bottom display-1 fw-bold text-secondary p-0 pb-2'
+  );
+  const table_row = classNames(style.table_row);
+  return (
+    <div className={wrapper}>
+      <span className='title'>TopProducts</span>
+
       <table className='mt-auto table table-hove table-borderless'>
         <thead>
           <tr>
@@ -33,6 +64,10 @@
           ))}
         </tbody>
       </table>
+    </div>
+  );
+};
+
 TopProducts.defaultProps = {
   table_content: [
     {
