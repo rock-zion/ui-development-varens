@@ -1,0 +1,42 @@
+.revenue_row_wrapper {
+  grid-template-columns: 1fr auto;
+}
+
+.customers_row_wrapper {
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-bottom: 52px;
+}
+
+.traffic_channels_wrapper {
+  grid-template-columns: auto 1fr;
+}
+
+.revenue_row_wrapper,
+.customers_row_wrapper,
+.traffic_channels_wrapper {
+  display: grid;
+  column-gap: 24px;
+}
+
+.barchart_wrapper {
+  height: 202px;
+  margin-top: auto;
+}
+
+.labels_yday::before,
+.labels_tday::before {
+  content: '';
+  display: block;
+  height: 7px;
+  width: 7px;
+  border-radius: 100%;
+  margin-right: 8px;
+}
+
+.labels_tday::before {
+  background-color: var(--primary);
+}
+
+.labels_yday::before {
+  background-color: var(--primary_light);
+}
