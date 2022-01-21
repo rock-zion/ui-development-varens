@@ -1,14 +1,37 @@
 .revenue_row_wrapper {
   grid-template-columns: 1fr auto;
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+  }
 }
 
 .customers_row_wrapper {
   grid-template-columns: 1fr 1fr 1fr;
   padding-bottom: 52px;
+
+  @media (min-width: 768px) and (max-width: 992px) {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .traffic_channels_wrapper {
   grid-template-columns: auto 1fr;
+
+  @media (min-width: 768px) and (max-width: 992px) {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .revenue_row_wrapper,

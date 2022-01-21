@@ -2,6 +2,14 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin-top: 30px;
+
+  @media (min-width: 768px) and (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .overview_wrapper:hover {
@@ -21,8 +29,8 @@
 }
 
 .overview_wrapper:hover > .overview_header .title {
-    color: #e3e1e5 !important;
-  }
+  color: #e3e1e5 !important;
+}
 
 .overview_wrapper:nth-of-type(1) {
   border-radius: 4px 0px 0px 4px;

@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 export const Dropdown = ({ title, showDropDown, setShowDropDown }) => {
   return (
-    <div className='dropdown bg-transparent'>
+    <div className='dropdown bg-transparent d-none d-sm-block'>
       <button
         onClick={() => setShowDropDown(!showDropDown)}
         className='btn btn-secondary bg-transparent border-0 dropdown-toggle'

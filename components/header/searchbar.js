@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { DrawerContext } from 'hooks/drawer';
+
 import style from './style.module.scss';
 import { default as SmSearch } from 'assets/SmSearch.svg';
 import classNames from 'classnames';
 import Notification from 'assets/Notification.svg';
 import { ProfileImage } from 'components/profiles/profileimages';
 import { Dropdown } from 'components/dropdown';
+import { default as Burger } from 'assets/Burger.svg';
 
 export const Searchbar = () => {
+  const { showNav, setShowNav } = useContext(DrawerContext);
   const [showDropDown, setShowDropDown] = useState(false);
   const search_header = classNames(
     style.search_header,
@@ -21,11 +25,19 @@ export const Searchbar = () => {
           style.input_wrapper,
           'h-100 d-flex align-items-center'
         )}>
-        <SmSearch />
+        <div
+          onClick={() => setShowNav(!showNav)}
+          className='mr-4 btn d-flex d-sm-flex d-xl-none'>
+          <Burger />
+        </div>
+        <div className='d-none d-sm-block'>
+          <SmSearch />
+        </div>
+
         <Search />
       </div>
       <div className='d-flex align-items-center'>
-        <span className='position-relative mr-3'>
+        <span className='position-relative mr-3 d-none d-sm-block'>
           <Notification />
           <span className='notification_alert d-block position-absolute'></span>
         </span>
@@ -37,7 +49,7 @@ export const Searchbar = () => {
             />
           </span>
           <Dropdown
-            title={"Maxbert"}
+            title={'Maxbert'}
             showDropDown={showDropDown}
             setShowDropDown={setShowDropDown}
           />

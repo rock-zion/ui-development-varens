@@ -94,29 +94,31 @@ export default function Home({
               </div>
             </div>
           </div>
-          <div className={style.barchart_wrapper}>
-            <BarChart />
-          </div>
-          <div className='d-flex align-items-center justify-content-center'>
-            <span
-              className={classNames(
-                style.labels_tday,
-                'd-flex',
-                'align-items-center',
-                'display-2'
-              )}>
-              Today
-            </span>
-            <span
-              className={classNames(
-                style.labels_yday,
-                'd-flex',
-                'align-items-center',
-                'display-2',
-                'ml-3'
-              )}>
-              Yesterday
-            </span>
+          <div className='d-flex flex-column'>
+            <div className={style.barchart_wrapper}>
+              <BarChart />
+            </div>
+            <div className='d-flex align-items-center justify-content-center'>
+              <span
+                className={classNames(
+                  style.labels_tday,
+                  'd-flex',
+                  'align-items-center',
+                  'display-2'
+                )}>
+                Today
+              </span>
+              <span
+                className={classNames(
+                  style.labels_yday,
+                  'd-flex',
+                  'align-items-center',
+                  'display-2',
+                  'ml-3'
+                )}>
+                Yesterday
+              </span>
+            </div>
           </div>
         </Transaction>
       </div>

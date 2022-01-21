@@ -11,59 +11,63 @@ export const TopProducts = ({ table_content }) => {
     'bg-white',
     'wrapper',
     'd-flex',
-    'flex-column'
+    'flex-column',
+    'table-responsive'
   );
   const tr_td = classNames(
     'display-2',
     'fw-bold',
     'text-secondary',
     'px-0',
-    'align-middle'
+    'align-middle',
+    'text-nowrap'
   );
 
   const tr_th = classNames(
-    'border-bottom display-1 fw-bold text-secondary p-0 pb-2'
+    'border-bottom display-1 fw-bold text-secondary p-0 pb-2',
+    'pr-24'
   );
   const table_row = classNames(style.table_row);
   return (
     <div className={wrapper}>
-      <span className='title'>TopProducts</span>
-
-      <table className='mt-auto table table-hove table-borderless'>
-        <thead>
-          <tr>
-            <th className={tr_th} scope='col-1'>
-              ITEM
-            </th>
-            <th className={tr_th} scope='col-1'>
-              CHANGE
-            </th>
-            <th className={tr_th} scope='col-1'>
-              PRICE
-            </th>
-            <th className={tr_th} scope='col-1'>
-              SOLD
-            </th>
-            <th className={tr_th} scope='col-1'>
-              SALES
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {table_content.map(item => (
-            <tr key={item.item} className={table_row}>
-              <td className={tr_td}>{item.item}</td>
-              <td className={tr_td}>
-                {item.gain ? <SmGain /> : <SmLoss />}
-                {item.change}%
-              </td>
-              <td className={tr_td}>${item.price}</td>
-              <td className={tr_td}>{formatNum(item.sold)}</td>
-              <td className={tr_td}>${formatNum(item.sales)}</td>
+      <span className='title'>Top Products</span>
+      <div className='table-responsive table-responsive-sm'>
+        <table className='mt-auto table table-hove table-borderless'>
+          <thead>
+            <tr>
+              <th className={tr_th} scope='col-1'>
+                ITEM
+              </th>
+              <th className={tr_th} scope='col-1'>
+                CHANGE
+              </th>
+              <th className={tr_th} scope='col-1'>
+                PRICE
+              </th>
+              <th className={tr_th} scope='col-1'>
+                SOLD
+              </th>
+              <th className={tr_th} scope='col-1'>
+                SALES
+              </th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {table_content.map(item => (
+              <tr key={item.item} className={table_row}>
+                <td className={tr_td}>{item.item}</td>
+                <td className={tr_td}>
+                  {item.gain ? <SmGain /> : <SmLoss />}
+                  {item.change}%
+                </td>
+                <td className={tr_td}>${item.price}</td>
+                <td className={tr_td}>{formatNum(item.sold)}</td>
+                <td className={tr_td}>${formatNum(item.sales)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

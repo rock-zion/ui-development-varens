@@ -3,15 +3,18 @@ import 'styles/globals.scss';
 import 'styles/tabs.scss';
 import { useEffect } from 'react';
 import Layout from 'components/layout/Layout';
+import DrawerProvider from 'hooks/drawer';
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
     import('bootstrap/dist/js/bootstrap');
   }, []);
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <DrawerProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </DrawerProvider>
   );
 }
 

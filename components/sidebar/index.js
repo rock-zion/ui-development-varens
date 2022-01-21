@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import style from './style.module.scss';
 import { default as Overview } from 'assets/sidebar/Overview.svg';
 import { default as Products } from 'assets/sidebar/Products.svg';
@@ -12,11 +12,12 @@ import classNames from 'classnames';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { GetPro } from 'components/getpro/getpro';
-
+import { DrawerContext } from 'hooks/drawer';
+import { default as Burger } from 'assets/Burger.svg';
+import { isMobile } from 'utils';
 
 // eslint-disable-next-line
 export const LinkItem = React.forwardRef(
-
   ({ getActiveColor, linkIsActive, text, onClick, IMG, href }, ref) => {
     //
     const link_wrapper = classNames('d-flex', 'px-3', style.link_wrapper, {
@@ -53,7 +54,20 @@ export const Sidebar = ({ sidebar_links }) => {
   let { pathname } = useRouter();
   pathname = pathname.slice(1);
 
-  const nav_style = classNames(style.aside, 'd-flex bg-white', {});
+  const { showNav, setShowNav } = useContext(DrawerContext);
+
+  // when component mounts check if device is mobile and hide the navbar
+  useEffect(() => {
+    isMobile() ? null : setShowNav(!showNav);
+    return () => {};
+  }, []);
+
+  // navigation style
+  const nav_style = classNames(style.aside, 'd-flex bg-white', {
+    [`${style.hide_sidebar}`]: showNav,
+  });
+
+  //
 
   const linkIsActive = link => {
     const isActive = pathname?.includes(link.slice(1)) ? true : false;
@@ -67,8 +81,16 @@ export const Sidebar = ({ sidebar_links }) => {
 
   return (
     <aside className={nav_style}>
-      <div className={(style.brand_wrapper, 'd-flex mb-5')}>
+      <div
+        className={
+          (style.brand_wrapper, 'd-flex mb-5 justify-content-between')
+        }>
         <Brand />
+
+        {/* show on mobile only */}
+        <span className={'btn d-flex d-sm-flex d-xl-none'}>
+          <Burger onClick={() => setShowNav(!showNav)} />
+        </span>
       </div>
       <div className={style.nav_wrapper}>
         <div className={style.nav}>

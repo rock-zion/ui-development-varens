@@ -61,6 +61,21 @@ h1 {
   margin-left: 250px;
   padding: 0 32px 0 32px;
   background: #fbfafc;
+
+  @media only screen and (max-width: 1200px) {
+    margin-left: 0;
+  }
+
+  @media (min-width: 768px) and (max-width: 992px) {
+    
+  }
+  
+}
+
+.full_main {
+  width: 100vw;
+  margin-left: 0;
+  padding: 0 12px;
 }
 
 .title {
@@ -94,6 +109,6 @@ h1 {
   width: fit-content;
   height: fit-content;
   padding: 2px;
-  background: #EBEAED;
+  background: #ebeaed;
   border-radius: 100%;
 }
