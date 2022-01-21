@@ -1,0 +1,59 @@
+.overview_parent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 30px;
+}
+
+.overview_wrapper:hover {
+  background: #5542f6 !important;
+}
+
+.overview_wrapper:hover > .detail .overview_amount {
+  color: #ffffff !important;
+}
+
+.overview_wrapper:hover > .detail .profit_rate {
+  color: #ffffff !important;
+}
+
+.overview_wrapper:hover > .detail .daily_amount {
+  color: #e3e1e5 !important;
+}
+
+.overview_wrapper:hover > .overview_header .title {
+    color: #e3e1e5 !important;
+  }
+
+.overview_wrapper:nth-of-type(1) {
+  border-radius: 4px 0px 0px 4px;
+}
+
+.overview_wrapper:last-child {
+  border-radius: 0px 4px 4px 0px;
+}
+
+.overview_wrapper:not(:last-child) {
+  border-right: 1px solid #ebeaed;
+}
+
+.overview_base span {
+  display: flex;
+  align-items: flex-start;
+}
+
+.overview_amount {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.profit_rate {
+  font-weight: 600;
+}
+
+.profit_stat_icon {
+  margin-right: 4px;
+}
+
+.daily_amount {
+  margin-left: 8px;
+}
