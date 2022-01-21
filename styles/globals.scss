@@ -15,3 +15,15 @@ $theme-colors: (
   'green': #20c9ac,
   'light_blue': #00a5ff,
 );
+$display-font-sizes: (
+  1: 0.75rem,
+  2: 0.875rem,
+  3: 1rem,
+  4: 1.125rem,
+);
+
+$font-weight-lighter: lighter;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 600;
+$font-weight-bolder: 700;
