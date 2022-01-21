@@ -37,6 +37,10 @@ const LinkItem = React.forwardRef(
     );
   }
 );
+  const getActiveColor = link => {
+    const isActive = pathname?.includes(link.slice(1)) ? '#5542F6' : '#84818A';
+    return isActive;
+  };
 Sidebar.defaultProps = {
   sidebar_links: [
     { title: 'Overview', url: '/overview', IMG: Overview },
