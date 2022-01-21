@@ -93,7 +93,7 @@ export const Sidebar = ({ sidebar_links }) => {
 
 Sidebar.defaultProps = {
   sidebar_links: [
-    { title: 'Overview', url: '/overview', IMG: Overview },
+    { title: 'Overview', url: '/', IMG: Overview },
     { title: 'Product', url: '/products', IMG: Products },
     { title: 'Orders', url: '/orders', IMG: Orders },
     { title: 'Customers', url: '/customers', IMG: Customers },
