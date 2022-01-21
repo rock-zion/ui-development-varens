@@ -1,3 +1,13 @@
+  const [isHovered, setIsHovered] = useState(0);
+  const handleMouseEnter = id => {
+    setIsHovered(id);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(0);
+  };
+          onMouseEnter={() => handleMouseEnter(id)}
+          onMouseLeave={handleMouseLeave}
 Overview.defaultProps = {
   overview_data: [
     {
