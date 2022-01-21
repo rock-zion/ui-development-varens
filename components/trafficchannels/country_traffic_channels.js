@@ -1,3 +1,30 @@
+import USAMap from 'react-usa-map';
+  const statesCustomConfig = () => {
+    return {
+      CA: {
+        fill: '#5542F6',
+        clickHandler: event =>
+          console.log('Custom handler for NJ', event.target.dataset),
+      },
+      TX: {
+        fill: '#5542F6',
+      },
+      NY: {
+        fill: '#5542F6',
+      },
+      WA: {
+        fill: '#5542F6',
+      },
+      KA: {
+        fill: '#5542F6',
+      },
+    };
+  };
+
+  const mapHandler = event => {
+    alert(event.target.dataset.name);
+  };
+      <USAMap customize={statesCustomConfig()} onClick={mapHandler} />
 CountryTrafficChannels.defaultProps = {
   table_header: ['STATES', 'ORDERS', 'SALES'],
   table_content: [
